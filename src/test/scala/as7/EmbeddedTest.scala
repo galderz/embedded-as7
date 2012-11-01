@@ -4,7 +4,7 @@ import annotation.tailrec
 import java.io.{FileOutputStream, FileInputStream, File}
 import java.util.zip.{ZipEntry, ZipInputStream}
 import org.jboss.as.arquillian.container.embedded.{EmbeddedContainerConfiguration, EmbeddedDeployableContainer}
-import org.junit.Test
+import org.junit.{Ignore, Test}
 
 /**
  * // TODO: Document this
@@ -13,6 +13,7 @@ import org.junit.Test
  */
 class EmbeddedTest {
 
+   @Ignore
    @Test
    def test000() {
       // 1. With the AS7 zip dependency in place, unzip it
