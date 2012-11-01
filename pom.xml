@@ -9,21 +9,46 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-     <version.jboss.as>7.x.incremental.379</version.jboss.as>
+     <version.jboss.as>7.x.incremental.546</version.jboss.as>
+     <version.scala>2.9.2</version.scala>
+     <version.scala.tools>3.0.2.1</version.scala.tools>
   </properties>
 
   <dependencies>
 
      <dependency>
-        <groupId>org.jboss.as</groupId>
-        <artifactId>jboss-as-dist</artifactId>
-        <version>${version.jboss.as}</version>
-        <type>zip</type>
+        <groupId>org.scala-lang</groupId>
+        <artifactId>scala-library</artifactId>
+        <version>${version.scala}</version>
      </dependency>
+     <dependency>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>${version.scala.tools}</version>
+        <exclusions>
+           <exclusion>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-container-default</artifactId>
+           </exclusion>
+        </exclusions>
+     </dependency>
+
+     <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-dist</artifactId>-->
+        <!--<version>${version.jboss.as}</version>-->
+        <!--<type>zip</type>-->
+     <!--</dependency>-->
+
+     <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-server</artifactId>-->
+        <!--<version>${version.jboss.as}</version>-->
+     <!--</dependency>-->
 
      <dependency>
         <groupId>org.jboss.as</groupId>
-        <artifactId>jboss-as-server</artifactId>
+        <artifactId>jboss-as-arquillian-container-embedded</artifactId>
         <version>${version.jboss.as}</version>
      </dependency>
 
@@ -35,6 +60,27 @@
     </dependency>
 
   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>net.alchim31.maven</groupId>
+            <artifactId>scala-maven-plugin</artifactId>
+            <version>${version.scala.tools}</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>compile</goal>
+                     <goal>testCompile</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <scalaVersion>${version.scala}</scalaVersion>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
    <repositories>
       <repository>
