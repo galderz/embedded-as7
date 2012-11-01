@@ -23,13 +23,13 @@ public class EmbeddedJavaTest {
       // 1. With the AS7 zip dependency in place, unzip it
       String tmpDir = System.getProperty("java.io.tmpdir");
       String home = System.getProperty("user.home");
-      String jbossHome = tmpDir + "/jboss-as-7.x.incremental.379";
+      String jbossHome = tmpDir + "/jboss-as-7.x.incremental.546";
       File jbossHomeDir = new File(jbossHome);
 
       if (!jbossHomeDir.exists())
          unzip(home + "/.m2/repository/" +
-            "org/jboss/as/jboss-as-dist/7.x.incremental.379/" +
-            "jboss-as-dist-7.x.incremental.379.zip",
+            "org/jboss/as/jboss-as-dist/7.x.incremental.546/" +
+            "jboss-as-dist-7.x.incremental.546.zip",
             tmpDir);
 
       // TODO: ALR, why not use 'jboss.home.dir' ? ServerEnvironment.HOME_DIR
