@@ -1,17 +1,20 @@
+package as7
+
 import annotation.tailrec
 import java.io.{FileOutputStream, FileInputStream, File}
 import java.util.zip.{ZipEntry, ZipInputStream}
 import org.jboss.as.arquillian.container.embedded.{EmbeddedContainerConfiguration, EmbeddedDeployableContainer}
+import org.junit.Test
 
 /**
  * // TODO: Document this
  * @author Galder Zamarreño
  * @since // TODO
  */
+class EmbeddedTest {
 
-object Embedded {
-
-   def main(args: Array[String]) {
+   @Test
+   def test000() {
       // 1. With the AS7 zip dependency in place, unzip it
       val tmpDir = System.getProperty("java.io.tmpdir")
       val home = System.getProperty("user.home")
@@ -20,8 +23,8 @@ object Embedded {
 
       if (!jbossHomeDir.exists())
          unzip(home + "/.m2/repository/" +
-            "org/jboss/as/jboss-as-dist/7.x.incremental.546/" +
-            "jboss-as-dist-7.x.incremental.546.zip",
+                 "org/jboss/as/jboss-as-dist/7.x.incremental.546/" +
+                 "jboss-as-dist-7.x.incremental.546.zip",
             tmpDir)
 
       // TODO: ALR, why not use 'jboss.home.dir' ? ServerEnvironment.HOME_DIR
