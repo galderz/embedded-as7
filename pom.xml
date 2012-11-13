@@ -12,6 +12,7 @@
      <version.jboss.as>7.x.incremental.546</version.jboss.as>
      <version.scala>2.9.2</version.scala>
      <version.scala.tools>3.0.2.1</version.scala.tools>
+     <version.arquillian>1.0.0.Final</version.arquillian>
   </properties>
 
   <dependencies>
@@ -50,7 +51,52 @@
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-arquillian-container-embedded</artifactId>
         <version>${version.jboss.as}</version>
+        <!--&lt;!&ndash; TODO: Create a JIRA to sort this dependency out &ndash;&gt;-->
+        <!--<exclusions>-->
+           <!--<exclusion>-->
+              <!--<groupId>org.jboss.arquillian.container</groupId>-->
+              <!--<artifactId>arquillian-container-test-impl-base</artifactId>-->
+           <!--</exclusion>-->
+        <!--</exclusions>-->
      </dependency>
+
+     <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian.core</groupId>-->
+        <!--<artifactId>arquillian-core-impl-base</artifactId>-->
+        <!--<version>${version.arquillian}</version>-->
+     <!--</dependency>-->
+
+     <dependency>
+        <groupId>org.jboss.arquillian.core</groupId>
+        <artifactId>arquillian-core-api</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.jboss.arquillian.core</groupId>
+        <artifactId>arquillian-core-spi</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.jboss.arquillian.core</groupId>
+        <artifactId>arquillian-core-impl-base</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.jboss.arquillian.container</groupId>
+        <artifactId>arquillian-container-spi</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.jboss.arquillian.container</groupId>
+        <artifactId>arquillian-container-impl-base</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.jboss.arquillian.test</groupId>
+        <artifactId>arquillian-test-impl-base</artifactId>
+        <version>${version.arquillian}</version>
+     </dependency>
+
 
      <dependency>
         <groupId>junit</groupId>
